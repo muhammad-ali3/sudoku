@@ -1,94 +1,86 @@
-<div style="display: flex; overflow-x: scroll; flex-direction: column">
-    <h1>The rules of Sudoku</h1>
-    <p>
-        There are three Sudoku rules: Firstly, each row must contain the numbers
-        1-9 exactly once each. Secondly, each column must contain the numbers
-        1-9 exactly once each. Lastly, each 3×3 box must contain the numbers 1-9
-        exactly once each. That’s it!
-    </p>
-    <strong>But let’s take a look at these rules in more detail…</strong>
-    <h3>1. Each row must contain the numbers 1-9 exactly once each</h3>
-    <img src="/images/tutorial/Sudoku row rule.webp" alt="Sudoku row rule" />
-    <p>
-        The Sudoku grid is divided up into a 9×9 grid. This means there are nine
-        horizontal rows going from the left side of the grid to the right.
-    </p>
-    <p>
-        These rows each contain nine cells and some of these cells will already
-        have numbers placed in them. These are known as ‘given digits’.
-    </p>
-    <p>
-        The first rule of Sudoku is that you must place numbers in the empty
-        cells of the rows so that each row has the numbers 1-9 exactly once
-        each.
-    </p>
-    <h3>2. Each column must contain the numbers 1-9 exactly once each</h3>
-    <img
-        src="/images/tutorial/Sudoku column rule.webp"
-        alt="Sudoku column rule"
-    />
-    <p>
-        Just as there are nine rows, there are also nine vertical columns. Each
-        of these columns must also contain the numbers 1-9 exactly once each.
-    </p>
-    <p>
-        Because the columns each consist of nine cells, once you place the
-        numbers 1-9, you will be left with no double-ups.
-    </p>
-    <h3>3. Each 3×3 box must contain the numbers 1-9 exactly once each</h3>
-    <img
-        src="/images/tutorial/Sudoku 3×3 box rule.webp"
-        alt="Sudoku 3×3 box rule"
-    />
-    <p>
-        Finally, the Sudoku grid is also divided up into 9 3×3 subregions, or
-        ‘boxes’, each of which must also contain the numbers 1-9 exactly once
-        each.
-    </p>
-    <p>
-        Combining this with the first two rules, this means every row, column,
-        and 3×3 box must contain the numbers 1-9 with no double-ups anywhere.
-    </p>
-    <img
-        src="/images/tutorial/Example of a successfully solved Sudoku puzzle.webp"
-        alt="Example of a successfully solved Sudoku puzzle"
-    />
-    <p>
-        Despite popular misconception, there is
-        <a href="#"
-            >no additional rule requiring the two 9-cell diagonals to also
-            contain the numbers 1-9 once each.
-        </a>
-    </p>
-    <h1>Playing Sudoku</h1>
-    <p>
-        Now that you know the Sudoku game rules, let’s look at how these rules
-        determine how you play Sudoku.
-    </p>
-    <p>
-        Understanding this will help you with solving Sudoku puzzles and also
-        give you a better appreciation for the game.
-    </p>
-    <h4>Do not repeat any numbers</h4>
-    <p>Not repeating numbers is the most basic rule of Sudoku.</p>
-    <p>
-        Whenever you’re able to add a number to the grid, you should always make
-        sure you will not be repeating a number that’s already in the row,
-        column, or 3×3 box.
-    </p>
-    <h4>Never try to guess the solution</h4>
-    <p>
-        Each Sudoku puzzle will have one unique solution. In other words, each
-        cell is only supposed to have one number in it.
-    </p>
-    <p>
-        When you start solving a new game, you will be able to place different
-        numbers in the same cell without repeating them, but there will only be
-        one number that belongs in the cell.
-    </p>
-    <p>
-        Do not place a number in a cell until you have gone through the process
-        of elimination and there is only one number left that the cell can
-        contain.
-    </p>
-</div>
+<h1>The rules of Sudoku</h1>
+<p>
+    There are three Sudoku rules: Firstly, each row must contain the numbers 1-9
+    exactly once each. Secondly, each column must contain the numbers 1-9
+    exactly once each. Lastly, each 3×3 box must contain the numbers 1-9 exactly
+    once each. That’s it!
+</p>
+<strong>But let’s take a look at these rules in more detail…</strong>
+<h3>1. Each row must contain the numbers 1-9 exactly once each</h3>
+<img src="/images/tutorial/Sudoku row rule.webp" alt="Sudoku row rule" />
+<p>
+    The Sudoku grid is divided up into a 9×9 grid. This means there are nine
+    horizontal rows going from the left side of the grid to the right.
+</p>
+<p>
+    These rows each contain nine cells and some of these cells will already have
+    numbers placed in them. These are known as ‘given digits’.
+</p>
+<p>
+    The first rule of Sudoku is that you must place numbers in the empty cells
+    of the rows so that each row has the numbers 1-9 exactly once each.
+</p>
+<h3>2. Each column must contain the numbers 1-9 exactly once each</h3>
+<img src="/images/tutorial/Sudoku column rule.webp" alt="Sudoku column rule" />
+<p>
+    Just as there are nine rows, there are also nine vertical columns. Each of
+    these columns must also contain the numbers 1-9 exactly once each.
+</p>
+<p>
+    Because the columns each consist of nine cells, once you place the numbers
+    1-9, you will be left with no double-ups.
+</p>
+<h3>3. Each 3×3 box must contain the numbers 1-9 exactly once each</h3>
+<img
+    src="/images/tutorial/Sudoku 3×3 box rule.webp"
+    alt="Sudoku 3×3 box rule"
+/>
+<p>
+    Finally, the Sudoku grid is also divided up into 9 3×3 subregions, or
+    ‘boxes’, each of which must also contain the numbers 1-9 exactly once each.
+</p>
+<p>
+    Combining this with the first two rules, this means every row, column, and
+    3×3 box must contain the numbers 1-9 with no double-ups anywhere.
+</p>
+<img
+    src="/images/tutorial/Example of a successfully solved Sudoku puzzle.webp"
+    alt="Example of a successfully solved Sudoku puzzle"
+/>
+<p>
+    Despite popular misconception, there is
+    <a href="#"
+        >no additional rule requiring the two 9-cell diagonals to also contain
+        the numbers 1-9 once each.
+    </a>
+</p>
+<h1>Playing Sudoku</h1>
+<p>
+    Now that you know the Sudoku game rules, let’s look at how these rules
+    determine how you play Sudoku.
+</p>
+<p>
+    Understanding this will help you with solving Sudoku puzzles and also give
+    you a better appreciation for the game.
+</p>
+<h4>Do not repeat any numbers</h4>
+<p>Not repeating numbers is the most basic rule of Sudoku.</p>
+<p>
+    Whenever you’re able to add a number to the grid, you should always make
+    sure you will not be repeating a number that’s already in the row, column,
+    or 3×3 box.
+</p>
+<h4>Never try to guess the solution</h4>
+<p>
+    Each Sudoku puzzle will have one unique solution. In other words, each cell
+    is only supposed to have one number in it.
+</p>
+<p>
+    When you start solving a new game, you will be able to place different
+    numbers in the same cell without repeating them, but there will only be one
+    number that belongs in the cell.
+</p>
+<p>
+    Do not place a number in a cell until you have gone through the process of
+    elimination and there is only one number left that the cell can contain.
+</p>

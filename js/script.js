@@ -32,5 +32,25 @@ function dispalyGrids() {
     }
 }
 
+function handleHelpClose() {
+    var gameHelp = document.getElementById("game-help");
+    gameHelp.style.display = "none";
+}
 
-dispalyGrids();
+function handleHelpOpen() {
+    var gameHelp = document.getElementById("game-help");
+    gameHelp.style.display = "flex";
+}
+
+var closeButton = document.querySelector(".close-button");
+var helpButton = document.querySelector("#help-icon");
+closeButton.addEventListener("click", handleHelpClose);
+helpButton.addEventListener("click", handleHelpOpen);
+
+window.onbeforeunload = function() {
+    return "Data will be lost if you leave the page, are you sure?";
+  };
+  
+window.addEventListener('load', function () {
+    dispalyGrids();
+});
