@@ -176,10 +176,11 @@ img {
     justify-content: center;
     text-align: center;
     transition: ease-in-out 0.5s;
-    width :calc(100% - 20px);
+    width : 100%;
     background-color: #000000;
     color: #ffffff;
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     cursor: pointer;
 }
 
