@@ -46,11 +46,25 @@ var closeButton = document.querySelector(".close-button");
 var helpButton = document.querySelector("#help-icon");
 closeButton.addEventListener("click", handleHelpClose);
 helpButton.addEventListener("click", handleHelpOpen);
-window.scrollTo(0,document.body.scrollHeight);
+
 window.onbeforeunload = function() {
     return "Data will be lost if you leave the page, are you sure?";
-  };
+};
 
 window.addEventListener('load', function () {
     dispalyGrids();
+    
+    // Request fullscreen
+    if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+    } else if (document.documentElement.mozRequestFullScreen) { /* Firefox */
+        document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+        document.documentElement.webkitRequestFullscreen();
+    } else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
+        document.documentElement.msRequestFullscreen();
+    }
+
+    // Scroll to the bottom
+    window.scrollTo(0, document.body.scrollHeight);
 });
