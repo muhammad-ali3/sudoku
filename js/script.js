@@ -46,11 +46,11 @@ var closeButton = document.querySelector(".close-button");
 var helpButton = document.querySelector("#help-icon");
 closeButton.addEventListener("click", handleHelpClose);
 helpButton.addEventListener("click", handleHelpOpen);
-
+window.scrollTo(0,document.body.scrollHeight);
 window.onbeforeunload = function() {
     return "Data will be lost if you leave the page, are you sure?";
   };
-  
+
 window.addEventListener('load', function () {
     dispalyGrids();
 });
