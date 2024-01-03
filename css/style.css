@@ -176,7 +176,7 @@ img {
     justify-content: center;
     text-align: center;
     transition: ease-in-out 0.5s;
-    width: 100%;
+    width :calc(100% - 20px);
     background-color: #000000;
     color: #ffffff;
     padding: 10px;
