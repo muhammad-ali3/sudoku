@@ -21,6 +21,10 @@ body {
     background-image: url("https://sudoku.projectsby.me/images/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 img {

@@ -47,6 +47,19 @@ var helpButton = document.querySelector("#help-icon");
 closeButton.addEventListener("click", handleHelpClose);
 helpButton.addEventListener("click", handleHelpOpen);
 
+function handleValueEdit() {
+    var cells = document.getElementsByClassName('sudoku-cell');
+    [...cells].forEach(element => {
+        element.addEventListener('click', function(e) {
+            e.target.textContent = (e.target.textContent % 9) + 1;
+
+            });
+        });
+}
+
+handleValueEdit();
+
+
 window.onbeforeunload = function() {
     return "Data will be lost if you leave the page, are you sure?";
 };
