@@ -31,7 +31,6 @@ function dispalyGrids() {
         }
     }
 }
-
 function handleHelpClose() {
     var gameHelp = document.getElementById("game-help");
     gameHelp.style.display = "none";
@@ -51,19 +50,34 @@ function handleValueEdit() {
     var cells = document.getElementsByClassName('sudoku-cell');
     [...cells].forEach(element => {
         element.addEventListener('click', function(e) {
+            if (e.target.classList.contains('sudoku-cell--initial')) {
+                return;
+            }
             e.target.textContent = (e.target.textContent % 9) + 1;
 
             });
         });
 }
-
 handleValueEdit();
-
-
 window.onbeforeunload = function() {
     return "Data will be lost if you leave the page, are you sure?";
 };
 
+function generateSudoku() {
+    var sudokustring = sudoku.generate("easy");
+    console.log(sudokustring);
+
+    var cells = document.getElementsByClassName("sudoku-cell");
+    var sudokuArray = sudokustring.split("");
+    for (var i = 0; i < sudokuArray.length; i++) {
+        if (sudokuArray[i] !== ".") {
+            cells[i].textContent = sudokuArray[i];
+            cells[i].classList.add("sudoku-cell--initial");
+        }
+    }
+}
+
 window.addEventListener('load', function () {
     dispalyGrids();
+    generateSudoku();
 });
