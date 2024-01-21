@@ -116,6 +116,10 @@ img {
     width: calc(300px / 9 - 1.5px);
     height: calc(300px / 9 - 1.5px);
 }
+.sudoku-cell--initial{
+    background: rgba(255, 255, 255, 0.233);
+
+}
 
 .sudoku-cell:hover {
     background-color: #be9c6c;

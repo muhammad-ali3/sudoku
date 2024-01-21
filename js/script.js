@@ -53,7 +53,9 @@ function handleValueEdit() {
             if (e.target.classList.contains('sudoku-cell--initial')) {
                 return;
             }
-            e.target.textContent = (e.target.textContent % 9) + 1;
+            else{
+                e.target.textContent = (e.target.textContent % 9) + 1;
+            }
 
             });
         });
