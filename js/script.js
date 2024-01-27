@@ -142,7 +142,8 @@ var span = document.getElementsByClassName("close")[0];
 var difficulty;
 async function getDifficulty() {
     var searchParams = new URLSearchParams(window.location.search);
-    var difficulty = searchParams.get("difficulty");
+    difficulty = searchParams.get("difficulty");
+    console.log(difficulty)
     if (!difficulty === null) {
         // Handle the case where "difficulty" parameter is not present
         return;
