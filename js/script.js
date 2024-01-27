@@ -137,16 +137,15 @@ solveButton.addEventListener("click", function(){
 });
 
 var modal = document.getElementById("myModal");
-var btn = document.getElementById("myBtn");
-var span = document.getElementsByClassName("close")[0];
 var difficulty;
+
 async function getDifficulty() {
     var searchParams = new URLSearchParams(window.location.search);
     difficulty = searchParams.get("difficulty");
     console.log(difficulty)
     if (!difficulty === null) {
         // Handle the case where "difficulty" parameter is not present
-        return
+        return null
     }
     else{
         modal.style.display = "block";
@@ -159,15 +158,18 @@ async function getDifficulty() {
         easy.addEventListener("click", async function () {
             difficulty = "easy";
             window.location.href = `https://sudoku.projectsby.me/?difficulty=${difficulty}`;
+            modal.style.display = "none";
         });
         
         medium.addEventListener("click", async function () {
             difficulty = "medium";
             window.location.href = `https://sudoku.projectsby.me/?difficulty=${difficulty}`;
+            modal.style.display = "none";
         });
         hard.addEventListener("click", async function () {
             difficulty = "hard";
             window.location.href = `https://sudoku.projectsby.me/?difficulty=${difficulty}`;
+            modal.style.display = "none";
         });
         veryhard.addEventListener("click", async function () {
             difficulty = "very-hard";
@@ -176,10 +178,12 @@ async function getDifficulty() {
         insane.addEventListener("click", async function () {
             difficulty = "insane";
             window.location.href = `https://sudoku.projectsby.me/?difficulty=${difficulty}`;
+            modal.style.display = "none";
         });
         inhuman.addEventListener("click", async function () {
             difficulty = "inhuman";
             window.location.href = `https://sudoku.projectsby.me/?difficulty=${difficulty}`;
+            modal.style.display = "none";
         }); 
     }
     
@@ -187,7 +191,7 @@ async function getDifficulty() {
 
 
 window.addEventListener('load', async function () {
-    await getDifficulty();
+    getDifficulty();
     await dispalyGrids().then(async function() {
         var difficultyIndicator = document.querySelector("#difficulty-indicator");
         difficultyIndicator.textContent = `Difficulty: ${difficulty}`;
