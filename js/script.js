@@ -146,8 +146,14 @@ var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 var difficulty;
 async function getDifficulty() {
+    var searchParams = new URLSearchParams(window.location.search);
+    var difficulty = searchParams.get("difficulty");
+    console.log(difficulty);
+    if (!difficulty === null) {
+        // Handle the case where "difficulty" parameter is not present
+        return;
+    }
     modal.style.display = "block";
-    var difficulty;
     var easy = document.querySelector("#easy");
     var medium = document.querySelector("#medium");
     var hard = document.querySelector("#hard");
@@ -156,37 +162,35 @@ async function getDifficulty() {
     var inhuman = document.querySelector("#inhuman");
     easy.addEventListener("click", async function () {
         difficulty = "easy";
-        modal.style.display = "none";
+        window.location.href = `https://sudoku.projectsby.me/?difficulty=${difficulty}`;
     });
+    
     medium.addEventListener("click", async function () {
         difficulty = "medium";
-        modal.style.display = "none";
+        window.location.href = `https://sudoku.projectsby.me/?difficulty=${difficulty}`;
     });
     hard.addEventListener("click", async function () {
         difficulty = "hard";
-        modal.style.display = "none";
+        window.location.href = `https://sudoku.projectsby.me/?difficulty=${difficulty}`;
     });
     veryhard.addEventListener("click", async function () {
         difficulty = "very-hard";
-        modal.style.display = "none";
+        window.location.href = `https://sudoku.projectsby.me/?difficulty=${difficulty}`;
     });
     insane.addEventListener("click", async function () {
         difficulty = "insane";
-        modal.style.display = "none";
+        window.location.href = `https://sudoku.projectsby.me/?difficulty=${difficulty}`;
     });
     inhuman.addEventListener("click", async function () {
         difficulty = "inhuman";
-        modal.style.display = "none";
+        window.location.href = `https://sudoku.projectsby.me/?difficulty=${difficulty}`;
     });
-    return difficulty;
-
 }
 
 
 window.addEventListener('load', async function () {
+    await getDifficulty();
     await dispalyGrids().then(async function() {
-        var difficulty = await getDifficulty();
-        console.log(difficulty);
         var difficultyIndicator = document.querySelector("#difficulty-indicator");
         difficultyIndicator.textContent = `Difficulty: ${difficulty}`;
         sudokuString = await generateSudoku(difficulty);
