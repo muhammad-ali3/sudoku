@@ -148,38 +148,41 @@ async function getDifficulty() {
         // Handle the case where "difficulty" parameter is not present
         return
     }
-    modal.style.display = "block";
-    var easy = document.querySelector("#easy");
-    var medium = document.querySelector("#medium");
-    var hard = document.querySelector("#hard");
-    var veryhard = document.querySelector("#very-hard");
-    var insane = document.querySelector("#insane");
-    var inhuman = document.querySelector("#inhuman");
-    easy.addEventListener("click", async function () {
-        difficulty = "easy";
-        window.location.href = `https://sudoku.projectsby.me/?difficulty=${difficulty}`;
-    });
+    else{
+        modal.style.display = "block";
+        var easy = document.querySelector("#easy");
+        var medium = document.querySelector("#medium");
+        var hard = document.querySelector("#hard");
+        var veryhard = document.querySelector("#very-hard");
+        var insane = document.querySelector("#insane");
+        var inhuman = document.querySelector("#inhuman");
+        easy.addEventListener("click", async function () {
+            difficulty = "easy";
+            window.location.href = `https://sudoku.projectsby.me/?difficulty=${difficulty}`;
+        });
+        
+        medium.addEventListener("click", async function () {
+            difficulty = "medium";
+            window.location.href = `https://sudoku.projectsby.me/?difficulty=${difficulty}`;
+        });
+        hard.addEventListener("click", async function () {
+            difficulty = "hard";
+            window.location.href = `https://sudoku.projectsby.me/?difficulty=${difficulty}`;
+        });
+        veryhard.addEventListener("click", async function () {
+            difficulty = "very-hard";
+            window.location.href = `https://sudoku.projectsby.me/?difficulty=${difficulty}`;
+        });
+        insane.addEventListener("click", async function () {
+            difficulty = "insane";
+            window.location.href = `https://sudoku.projectsby.me/?difficulty=${difficulty}`;
+        });
+        inhuman.addEventListener("click", async function () {
+            difficulty = "inhuman";
+            window.location.href = `https://sudoku.projectsby.me/?difficulty=${difficulty}`;
+        }); 
+    }
     
-    medium.addEventListener("click", async function () {
-        difficulty = "medium";
-        window.location.href = `https://sudoku.projectsby.me/?difficulty=${difficulty}`;
-    });
-    hard.addEventListener("click", async function () {
-        difficulty = "hard";
-        window.location.href = `https://sudoku.projectsby.me/?difficulty=${difficulty}`;
-    });
-    veryhard.addEventListener("click", async function () {
-        difficulty = "very-hard";
-        window.location.href = `https://sudoku.projectsby.me/?difficulty=${difficulty}`;
-    });
-    insane.addEventListener("click", async function () {
-        difficulty = "insane";
-        window.location.href = `https://sudoku.projectsby.me/?difficulty=${difficulty}`;
-    });
-    inhuman.addEventListener("click", async function () {
-        difficulty = "inhuman";
-        window.location.href = `https://sudoku.projectsby.me/?difficulty=${difficulty}`;
-    });
 }
 
 
