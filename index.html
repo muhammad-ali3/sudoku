@@ -104,7 +104,9 @@
             </div>
         </div>
         <div id="game-help">
-            <div class="close-button"><strong style="font-size:x-large">X</strong>&nbsp;Close</div>
+            <div class="close-button">
+                <strong style="font-size: x-large">X</strong>&nbsp;Close
+            </div>
             <h1>The rules of Sudoku</h1>
             <p>
                 There are three Sudoku rules: Firstly, each row must contain the
@@ -171,7 +173,7 @@
             <img
                 src="images/tutorial/Example of a successfully solved Sudoku puzzle.webp"
                 alt="Example of a successfully solved Sudoku puzzle"
-                />
+            />
             <p>
                 Despite popular misconception, there is
                 <a href="#"
@@ -212,6 +214,7 @@
             </p>
         </div>
         <div class="bottom-bar">
+            <h5 id="difficulty-indicator"></h5>
             <a title="Reset Game" id="reset">
                 <img src="images/svg/reload.svg" />
             </a>
@@ -224,7 +227,20 @@
             <a title="Help" id="help-icon">
                 <img src="images/svg/info.svg" />
             </a>
+
         </div>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <h3>Please a difficulty level:</h3>
+                <button class="lvlButton" id="easy">Easy</button>
+                <button class="lvlButton" id="medium">Medium</button>
+                <button class="lvlButton" id="hard">Hard</button>
+                <button class="lvlButton" id="very-hard">Expert</button>
+                <button class="lvlButton" id="insane">Professional</button>
+                <button class="lvlButton" id="inhuman">Impossible</button>
+            </div>
+        </div>
+
         <script type="module" src="js/script.js"></script>
         <script type="module" src="js/sudoku.js"></script>
     </body>

@@ -1,4 +1,4 @@
-function dispalyGrids() {
+async function dispalyGrids() {
     var cells = document.getElementsByClassName("sudoku-cell");
 
     for (var i = 0; i <= 8; i++) {
@@ -67,7 +67,6 @@ window.onbeforeunload = function() {
 // generate a sudoku
 function generateSudoku(difficulty) {
     var sudokustring = sudoku.generate(difficulty);
-    console.log(sudokustring);
 
     var cells = document.getElementsByClassName("sudoku-cell");
     var sudokuArray = sudokustring.split("");
@@ -138,14 +137,62 @@ solveButton.addEventListener("click", function(){
     [...cells].forEach((element, i) => {
         if (!element.classList.contains("sudoku-cell--initial")) {
             element.textContent = solvedSudokuString[i];
-            console.log(element.id, element.textContent)
         }
     });
 });
 
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
+var difficulty;
+async function getDifficulty() {
+    modal.style.display = "block";
+    var difficulty;
+    var easy = document.querySelector("#easy");
+    var medium = document.querySelector("#medium");
+    var hard = document.querySelector("#hard");
+    var veryhard = document.querySelector("#very-hard");
+    var insane = document.querySelector("#insane");
+    var inhuman = document.querySelector("#inhuman");
+    easy.addEventListener("click", async function () {
+        difficulty = "easy";
+        modal.style.display = "none";
+    });
+    medium.addEventListener("click", async function () {
+        difficulty = "medium";
+        modal.style.display = "none";
+    });
+    hard.addEventListener("click", async function () {
+        difficulty = "hard";
+        modal.style.display = "none";
+    });
+    veryhard.addEventListener("click", async function () {
+        difficulty = "very-hard";
+        modal.style.display = "none";
+    });
+    insane.addEventListener("click", async function () {
+        difficulty = "insane";
+        modal.style.display = "none";
+    });
+    inhuman.addEventListener("click", async function () {
+        difficulty = "inhuman";
+        modal.style.display = "none";
+    });
+    return difficulty;
 
-window.addEventListener('load', function () {
-    dispalyGrids();
-    sudokuString = generateSudoku("hard");
-    solvedSudokuString = solveSudoku(sudokuString)
+}
+
+
+window.addEventListener('load', async function () {
+    await dispalyGrids().then(async function() {
+        var difficulty = await getDifficulty();
+        console.log(difficulty);
+        var difficultyIndicator = document.querySelector("#difficulty-indicator");
+        difficultyIndicator.textContent = `Difficulty: ${difficulty}`;
+        sudokuString = await generateSudoku(difficulty);
+        solvedSudokuString = await solveSudoku(sudokuString)
+    });
 });
+
+
+
