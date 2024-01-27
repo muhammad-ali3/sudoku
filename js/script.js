@@ -88,7 +88,6 @@ function solveSudoku(string){
 
 function checkSudoku() {
     var cells = document.getElementsByClassName("sudoku-cell");
-    console.log(cells[10].textContent)
     let currentString = "";
     // create current list
     [...cells].forEach(element => {
@@ -98,7 +97,6 @@ function checkSudoku() {
             currentString += element.textContent;
         }
     });
-    console.log(currentString)
     // solve current list
     for (let i = 0; i < currentString.length; i++) {
         if (currentString[i] !== ".") {
@@ -148,7 +146,6 @@ var difficulty;
 async function getDifficulty() {
     var searchParams = new URLSearchParams(window.location.search);
     var difficulty = searchParams.get("difficulty");
-    console.log(difficulty);
     if (!difficulty === null) {
         // Handle the case where "difficulty" parameter is not present
         return;
