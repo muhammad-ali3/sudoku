@@ -145,16 +145,16 @@ async function getDifficulty() {
     console.log(difficulty)
     if (!difficulty === null) {
         // Handle the case where "difficulty" parameter is not present
-        return null
+        return 
     }
     else{
-        modal.style.display = "block";
         var easy = document.querySelector("#easy");
         var medium = document.querySelector("#medium");
         var hard = document.querySelector("#hard");
         var veryhard = document.querySelector("#very-hard");
         var insane = document.querySelector("#insane");
         var inhuman = document.querySelector("#inhuman");
+        modal.style.display = "block";
         easy.addEventListener("click", async function () {
             difficulty = "easy";
             window.location.href = `https://sudoku.projectsby.me/?difficulty=${difficulty}`;
