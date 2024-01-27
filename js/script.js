@@ -120,7 +120,7 @@ checkButton.addEventListener("click", checkSudoku);
 var resetButton = document.getElementById("reset");
 resetButton.addEventListener("click", function(){
     // Reload the page without triggering beforeunload
-    window.location.href = window.location.href;
+    window.location.href = "https://sudoku.projectsby.me/";
 });
 
 var sudokuString;
