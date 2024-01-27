@@ -61,9 +61,6 @@ function handleValueEdit() {
         });
 }
 handleValueEdit();
-window.onbeforeunload = function() {
-    return "Data will be lost if you leave the page, are you sure?";
-};
 // generate a sudoku
 function generateSudoku(difficulty) {
     var sudokustring = sudoku.generate(difficulty);
