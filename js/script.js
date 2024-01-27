@@ -143,11 +143,7 @@ async function getDifficulty() {
     var searchParams = new URLSearchParams(window.location.search);
     difficulty = searchParams.get("difficulty");
     console.log(difficulty)
-    if (!difficulty === null) {
-        // Handle the case where "difficulty" parameter is not present
-        return 
-    }
-    else{
+    if (difficulty === null) {
         var easy = document.querySelector("#easy");
         var medium = document.querySelector("#medium");
         var hard = document.querySelector("#hard");
@@ -186,13 +182,16 @@ async function getDifficulty() {
             modal.style.display = "none";
         }); 
     }
+    else{
+        return
+    }
     
 }
 
 
 window.addEventListener('load', async function () {
-    getDifficulty();
     await dispalyGrids().then(async function() {
+        getDifficulty();
         var difficultyIndicator = document.querySelector("#difficulty-indicator");
         difficultyIndicator.textContent = `Difficulty: ${difficulty}`;
         sudokuString = await generateSudoku(difficulty);
