@@ -146,7 +146,7 @@ async function getDifficulty() {
     console.log(difficulty)
     if (!difficulty === null) {
         // Handle the case where "difficulty" parameter is not present
-        return;
+        return
     }
     modal.style.display = "block";
     var easy = document.querySelector("#easy");
